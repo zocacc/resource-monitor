@@ -47,4 +47,4 @@ echo -e "${BLUE}Dica: Para visualizações de experimentos:${NC}"
 echo -e "  • Menu → Opção 4 (Experimentos) → Opção 7 (Gerar visualizações)"
 echo -e "  • Ou manual: python3 scripts/visualize.py --experiments output/graphs"
 echo ""
-./bin/monitor menu
+sudo ./bin/monitor menu

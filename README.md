@@ -571,7 +571,7 @@ Para questões sobre o projeto:
 
 ```bash
 # Build e execução
-./build.sh                              # Compilar e abrir menu
+sudo ./build.sh                              # Compilar e abrir menu
 
 # Monitoramento
 ./bin/monitor tui <PID>                 # TUI em tempo real
