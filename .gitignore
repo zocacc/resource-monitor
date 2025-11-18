@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+*.egg-info/
+
+# C/C++ compiled files
+*.o
+*.out
+*.exe
+*.a
+*.so
+
+# Build directories - completely ignored, created by build.sh/make
+bin/
+obj/
+
+# Output files - ignore generated data but keep directory structure
+output/**/*
+!output/.gitkeep
+!output/graphs/.gitkeep
+!output/experiments/.gitkeep
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+*.csv
+*.json

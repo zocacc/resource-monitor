@@ -2,6 +2,8 @@
 
 Sistema completo de monitoramento de processos Linux com suporte a namespaces, cgroups v2 e experimentos de isolamento e limitação de recursos. Desenvolvido como trabalho acadêmico (RA3) para a disciplina de Sistemas Operacionais.
 
+**Autor:** Enzo Capellari - Grupo 9
+
 ## 📖 Descrição do Projeto
 
 Este projeto implementa um **profiler de recursos de sistema** em C que permite:
@@ -14,6 +16,25 @@ Este projeto implementa um **profiler de recursos de sistema** em C que permite:
 6. **Visualizações gráficas** geradas automaticamente com matplotlib
 
 O sistema foi desenvolvido para demonstrar na prática os mecanismos fundamentais de **containers Linux** (namespaces e cgroups) e medir o overhead de diferentes técnicas de isolamento e monitoramento.
+
+## 📁 Estrutura do Projeto
+
+| Módulo | Arquivo(s) Principal(is) | Descrição |
+|--------|-------------------------|-----------|
+| **Core do Monitor** | `src/main.c`, `src/monitor_tui.c` | Menu interativo, interface TUI, loop de monitoramento |
+| **Coleta de Métricas** | `src/cpu_monitor.c`, `src/memory_monitor.c`, `src/io_monitor.c`, `src/network_monitor.c` | Leitura de dados do `/proc` e cálculos de uso |
+| **Namespace Analyzer** | `src/namespace_analyzer.c` | Análise, comparação e relatórios de namespaces |
+| **Cgroup Manager** | `src/cgroup_v2.c`, `src/cgroup_manager.c` | Gerenciamento de cgroups v2, aplicação de limites |
+| **Experimento 1** | `src/experiment_overhead.c` | Medição de overhead de monitoramento |
+| **Experimento 2** | `src/experiments.c` (namespace) | Validação de isolamento via namespaces |
+| **Experimento 3** | `src/experiment_cpu_throttling.c` | Demonstração de CPU throttling |
+| **Experimento 4** | `src/experiment_memory_limit.c` | Demonstração de limites de memória |
+| **Experimento 5** | `src/experiment_io_limit.c` | Demonstração de limites de I/O |
+| **Visualização** | `scripts/visualize.py` | Geração de gráficos com matplotlib |
+| **Testes Unitários** | `tests/*.c` | 5 suítes de teste para validação |
+| **Utilitários** | `src/utils.c`, `src/process_monitor.c` | Funções auxiliares e exportação de dados |
+| **Documentação** | `docs/*.md`, `README.md` | Documentação técnica e guias |
+| **Build System** | `Makefile`, `build.sh` | Sistema de compilação e scripts de build |
 
 ## 🔧 Requisitos e Dependências
 
@@ -530,30 +551,6 @@ All heap blocks were freed -- no leaks are possible
 - ⚠️ **possibly lost** = Possível leak (verificar)
 
 **Relatórios gerados em:** `output/valgrind/`
-
-## 👥 Autor
-
-**Enzo Capellari - Grupo 9**
-
-Este projeto foi desenvolvido individualmente como trabalho RA3 da disciplina de Sistemas Operacionais.
-
-### Estrutura do Projeto
-
-| Módulo | Arquivo(s) Principal(is) | Descrição |
-|--------|-------------------------|-----------|
-| **Core do Monitor** | `src/main.c`, `src/monitor_tui.c` | Menu interativo, interface TUI, loop de monitoramento |
-| **Coleta de Métricas** | `src/cpu_monitor.c`, `src/memory_monitor.c`, `src/io_monitor.c`, `src/network_monitor.c` | Leitura de dados do `/proc` e cálculos de uso |
-| **Namespace Analyzer** | `src/namespace_analyzer.c` | Análise, comparação e relatórios de namespaces |
-| **Cgroup Manager** | `src/cgroup_v2.c`, `src/cgroup_manager.c` | Gerenciamento de cgroups v2, aplicação de limites |
-| **Experimento 1** | `src/experiment_overhead.c` | Medição de overhead de monitoramento |
-| **Experimento 2** | `src/experiments.c` (namespace) | Validação de isolamento via namespaces |
-| **Experimento 3** | `src/experiment_cpu_throttling.c` | Demonstração de CPU throttling |
-| **Experimento 4** | `src/experiment_memory_limit.c` | Demonstração de limites de memória |
-| **Experimento 5** | `src/experiment_io_limit.c` | Demonstração de limites de I/O |
-| **Visualização** | `scripts/visualize.py` | Geração de gráficos com matplotlib |
-| **Utilitários** | `src/utils.c`, `src/process_monitor.c` | Funções auxiliares e exportação de dados |
-| **Documentação** | `docs/*.md`, `README.md` | Documentação técnica e guias |
-| **Build System** | `Makefile`, `build.sh` | Sistema de compilação e scripts de build |
 
 ---
 
