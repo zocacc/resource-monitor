@@ -353,6 +353,25 @@ output/
 
 ## 🧪 Testes e Validação
 
+### Visão Geral dos Testes
+
+O projeto possui uma **suíte completa de testes automatizados** para garantir a qualidade e confiabilidade do código. Os testes são divididos em duas categorias principais:
+
+**🔬 Testes Unitários (5 suítes)**
+- Validam componentes individuais do sistema
+- Testam leitura de métricas do `/proc`
+- Verificam funcionalidade de namespaces e cgroups
+- **29 asserções** no total
+- Execução rápida (~2 segundos)
+
+**🔍 Análise de Memory Leaks (Valgrind)**
+- Detecta vazamentos de memória
+- Valida liberação correta de recursos
+- Testa 6 cenários diferentes
+- Relatórios detalhados gerados automaticamente
+
+Os testes são essenciais para validar que o sistema funciona corretamente em diferentes cenários e que não há problemas de gerenciamento de memória.
+
 ### Testes Unitários
 
 O projeto inclui testes unitários para validar os componentes principais:
@@ -562,8 +581,8 @@ Projeto acadêmico desenvolvido para fins educacionais - Sistemas Operacionais, 
 
 Para questões sobre o projeto:
 - Consulte a documentação em `docs/`
-- Verifique `docs/QUICK_START.md` para início rápido
-- Leia `docs/EXPERIMENTS_REPORT.md` para detalhes dos experimentos
+- Arquitetura do sistema: `docs/ARCHITECTURE.md`
+- Metodologia dos experimentos: `docs/EXPERIMENTOS.md`
 
 ## 🚀 Referência Rápida
 
