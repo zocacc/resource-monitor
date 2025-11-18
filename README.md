@@ -93,7 +93,7 @@ cat /sys/fs/cgroup/cgroup.controllers
 ### Método 1: Build Rápido (Recomendado)
 
 ```bash
-./build.sh
+sudo ./build.sh
 ```
 
 Este script:
